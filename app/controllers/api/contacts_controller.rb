@@ -1,12 +1,11 @@
 class Api::ContactsController < ApplicationController
+  before_action :set_contact, only: [:show, :update, :destroy]
 
   def index 
-    @contacts = Contact.all 
-    render json: @contacts
+    render json: Contact.all
   end
 
   def show 
-    @contact = Contact.find(params[:id])
     render json: @contact
   end
 
@@ -19,8 +18,7 @@ class Api::ContactsController < ApplicationController
     end
   end
 
-  def updated
-    @contact = Contact.find(params[:id])
+  def update
     if @contact.update(contact_params)
       render json: @contact
     else
@@ -29,7 +27,6 @@ class Api::ContactsController < ApplicationController
   end 
 
   def destroy
-    @contact = Contact.find(params[:id])
     @contact.destroy
     render json: { message: 'Contact is deleted.'}
   end
@@ -38,5 +35,9 @@ class Api::ContactsController < ApplicationController
 
     def contact_params
       params.require(:contact).permit( :name, :email, :phone, :comment )
+    end
+
+    def set_contact
+      @contact = Contact.find(params[:id])
     end
 end
