@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
+import { Container } from 'react-bootstrap'; 
 
 const Contacts = ({}) => {
   const [contacts, setContacts] = useState([])
@@ -45,11 +46,16 @@ const Contacts = ({}) => {
 }
 
   return (
-    <>
-      <h1>Contacts Page</h1>
-      <ContactForm addContact={addContact} />
-      <ContactList contacts={contacts} />
-    </>
+    <Container>
+      <>
+        <br />
+        <h1>Contact Me</h1>
+        <br />
+        <ContactForm addContact={addContact} />
+        <br />
+        <ContactList contacts={contacts} />
+      </>
+    </Container>
   )
 }
 

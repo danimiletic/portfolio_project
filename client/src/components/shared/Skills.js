@@ -1,7 +1,14 @@
+import { Container } from 'react-bootstrap';
 
 const Skills = () => {
   return (
-      <h1>Skills Page</h1>
+    <Container>
+      <>
+        <br />
+        <h1>Skills Page</h1>
+        <br />
+      </>
+    </Container>
   )
 }
 

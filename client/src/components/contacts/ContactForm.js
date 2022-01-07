@@ -24,7 +24,7 @@ const ContactForm = ({ addContact }) => {
           value={contact.name}
           onChange={(e) => setContact({...contact, name: e.target.value})}
           required
-          placeholder="name" />
+          placeholder="..." />
         </InputGroup>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">Email:</InputGroup.Text>
@@ -35,7 +35,7 @@ const ContactForm = ({ addContact }) => {
           value={contact.email}
           onChange={(e) => setContact({...contact, email: e.target.value})}
           required
-          placeholder="email" />
+          placeholder="..." />
         </InputGroup>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">Phone:</InputGroup.Text>
@@ -46,7 +46,7 @@ const ContactForm = ({ addContact }) => {
           value={contact.phone}
           onChange={(e) => setContact({...contact, phone: e.target.value})}
           required
-          placeholder="phone" />
+          placeholder="..." />
         </InputGroup>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-sm">Comment:</InputGroup.Text>
@@ -57,7 +57,7 @@ const ContactForm = ({ addContact }) => {
           value={contact.comment}
           onChange={(e) => setContact({...contact, comment: e.target.value})}
           required
-          placeholder="comment" />
+          placeholder="..." />
         </InputGroup>
         <br />
         <br />

@@ -1,8 +1,9 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react'; 
 import axios from 'axios'; 
+import { Card, Container } from 'react-bootstrap';
 
-const ContactShow = ({}) => {
+const ContactShow = ({ deleteContact, id }) => {
   const [contact, setContact] = useState({name: '', email: '', phone: 0, comment: '' })
   let params = useParams()
 
@@ -15,13 +16,25 @@ const ContactShow = ({}) => {
   }, [])
 
   return (
-    <>
-      <h1>{contact.name}</h1>
-      <p>{contact.email}</p>
-      <p>{contact.phone}</p>
-      <p>{contact.comment}</p>
-      <p>{params.contactId}</p>
-    </>
+    <Container>
+      <>
+        <br />
+        <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="" />
+          <Card.Body>
+            <Card.Title>{contact.name}</Card.Title>
+            <Card.Text>
+            {contact.email}
+            <br />
+            {contact.phone}
+            <br />
+            {contact.comment}
+            </Card.Text>
+            <Link to="/contacts">Go back</Link>
+          </Card.Body>
+        </Card>
+      </>
+    </Container>
   )
 }
 
