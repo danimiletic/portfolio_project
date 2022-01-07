@@ -28,7 +28,7 @@ class Api::ContactsController < ApplicationController
 
   def destroy
     @contact.destroy
-    render json: { message: 'Contact is deleted.'}
+    render json: { message: 'Contact is deleted'}
   end
 
   private 
